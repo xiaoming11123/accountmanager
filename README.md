@@ -44,9 +44,9 @@ apk仅将账号信息保存本地，未申请网络权限，不上传任何信�
 
 
 #### 求打赏1元
-小哥近半年来，经历了多件人生大事，感叹人生苦短，理应及时行乐，奈何苦无粮草之资，走过路过，求打赏1元，方可行走江湖
-支付宝扫码领红包          大佬打赏专用
-![红包](https://github.com/xiaoming11123/accountmanager/blob/master/pic/6.png)
+小哥近半年来，经历了多件人生大事，感叹人生苦短，理应及时行乐，奈何苦无粮草之资，走过路过，求打赏1元，方可行走江湖  
+支付宝扫码领红包                                 大佬打赏专用  
+![红包](https://github.com/xiaoming11123/accountmanager/blob/master/pic/6.png) 
 ![红包](https://github.com/xiaoming11123/accountmanager/blob/master/pic/7.png)
 
 #### 使用指南及对应截图
