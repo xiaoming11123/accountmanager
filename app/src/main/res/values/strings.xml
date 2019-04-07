@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="action_settings">Settings</string>
+    <string name="i_am_a_button">I am a Button</string>
+    <string name="hello">Hello World!</string>
+    <string name="textview">TextView</string>
+    <string name="digitals"><![CDATA[0123456789~!@#$%^&*()`-=_+{}[]\|;\',./abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]]></string>
+</resources>
