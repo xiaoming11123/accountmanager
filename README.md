@@ -34,7 +34,7 @@ apk仅将账号信息保存本地，未申请网络权限，不上传任何信�
 4 | 2 | 16
 5 | 1 | 16
 ```
-是否需要开源协议，如果需要，遵循[996.icu](https://github.com/996icu/996.ICU/blob/master/LICENSE),与[Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)开源协议
+是否需要开源协议，如果需要，遵循[996.icu](https://github.com/996icu/996.ICU/blob/master/LICENSE)与[Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)开源协议
 
 #### 求大佬指点
 小哥初尝安卓开发，基础api也是现学现卖，望大佬多多提携，指点不足之处
