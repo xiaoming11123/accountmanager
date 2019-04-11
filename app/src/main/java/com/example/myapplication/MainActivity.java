@@ -21,6 +21,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -212,11 +213,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void importFromFile(View view) {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    != PackageManager.PERMISSION_GRANTED) {
+                String[] PERMISSIONS_STORAGE = {Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                ActivityCompat.requestPermissions(this, PERMISSIONS_STORAGE, 2);
+            } else {
+                importFile();
+            }
+        } else {
+            log.setText("sdk < 6.0");
+        }
+    }
+
+    private void importFile() {
+
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("text/plain");//设置类型，我这里是任意类型，任意后缀的可以这样写。
         intent.addCategory(Intent.CATEGORY_OPENABLE);
         startActivityForResult(intent, 1);
     }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -304,15 +322,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == 1) {
-            for (int i : grantResults) {
-                if (i != 0) {
-                    log.setText("权限不够");
-                    return;
-                }
+        for (int i : grantResults) {
+            if (i != 0) {
+                log.setText("权限不够");
+                return;
             }
         }
-        writeFile();
+
+        if (requestCode == 1) {
+            writeFile();
+        } else if (requestCode == 2){
+            importFile();
+        } else {
+            log.setText("unknow operation");
+        }
     }
 
     private void writeFile() {
